@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "single-line-log": "^1.1.2",
+    "tiny-timer": "^1.6.0"
+  }
+}
