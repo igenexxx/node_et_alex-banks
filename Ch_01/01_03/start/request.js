@@ -1,16 +1,8 @@
-const https = require("https");
-const fs = require("fs");
+const http = require("http");
 
-const request = https.get(
-  "https://en.wikipedia.org/wiki/Charlie_Brown",
-  res => {
-    let download = fs.createWriteStream("./Charlie_Brown.html");
-    res.pipe(download);
+http.createServer((req, res) => {
+  res.writeHead(200, { "Content-Type": "text/plain" });
+  res.end("Hello World!");
+}).listen(3000);
 
-    res.on("end", () => {
-      console.log("Response Finished: Wiki page downloaded");
-    });
-  }
-);
-
-request.end();
+console.log('Web server listening on port %d', 3000)
